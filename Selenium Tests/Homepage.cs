@@ -9,7 +9,9 @@ namespace Selenium_Tests
 {
     class Homepage
     {
-        public static string URL = "http://localhost:8080/general/landingpage.html";
+        public static string CurrentURL = "http://localhost:8080/general/landingpage.html";
+        public static string ExpectedURL = "http://localhost:8080";
+        public static string Title = "Homepage";
         protected IWebDriver driver;
         public By buttonLogin = By.XPath("/html/body/div[2]/a[2]/button");
         public By buttonRegisterAsCompany = By.XPath("//*[@id=\"body\"]/div[2]/a[1]/button");
@@ -19,9 +21,10 @@ namespace Selenium_Tests
             this.driver = driver;
         }
 
-        public void Open()
+        public Homepage Open()
         {
             driver.Url = "http://localhost:8080/general/landingpage.html";
+            return new Homepage(driver);
         }
 
         public SignInPage ClickLoginButton()

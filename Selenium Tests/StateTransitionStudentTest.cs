@@ -23,13 +23,14 @@ namespace Selenium_Tests
             landingPage = new Homepage(driver);
             landingPage.Open();
         }
-
+        /*
         [Test]
         [Description("TC01")]
         public void URLShouldOpenHomepage()
         {
             driver.Url = "http://localhost:8080/";
-            Assert.AreEqual(Homepage.URL, driver.Title);
+
+            Assert.AreEqual(Homepage.Title, driver.Title);
         }
 
         [Test]
@@ -37,16 +38,16 @@ namespace Selenium_Tests
         public void LoginButtonOnHomepageShouldOpenLoginPage()
         {
             landingPage.ClickLoginButton();
-            Assert.AreEqual(SignInPage.URL, driver.Url);
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC03")]
         public void LoginWithValidCredentialsShouldOpenDashboard()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials();
 
-            Assert.AreEqual(DashboardPageStudents.URL, driver.Url);
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
         }
 
         [Test]
@@ -55,12 +56,12 @@ namespace Selenium_Tests
         {
             landingPage.ClickLoginButton().ClickReturnButton();
 
-            Assert.AreEqual(Homepage.URL, driver.Url);
+            Assert.AreEqual(Homepage.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC05")]
-        public void CompanyButtonShouldOpenCompanyOverview()
+        public void CompanyButtonShouldOpenCompanyOverviewPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickCompanyOverviewButton();
 
@@ -75,7 +76,7 @@ namespace Selenium_Tests
 
             Assert.AreEqual("http://localhost:8080/student/studentApplicationOverview.html", driver.Url);
         }
-
+        
         [Test]
         [Description("TC07")]
         public void ClickingACompanyShouldOpenCompanyDetailPage()
@@ -84,16 +85,16 @@ namespace Selenium_Tests
 
             Assert.AreEqual(CompanyDetailPage.URL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC08")]
-        public void StudentShouldBeAbleToOpenTheApplicationPageOnTheCompanyDetailPage()
+        public void StudentShouldBeAbleToOpenTheApplicationForumOnTheCompanyDetailPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickCompanyOverviewButton().ClickFirstCompany().ClickApplyButton();
 
             Assert.AreEqual(ApplicationPage.URL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC09")]
         public void ReturnButtonOnCompanyDetailPageShouldOpenCompanyOverviewPage()
@@ -102,7 +103,7 @@ namespace Selenium_Tests
 
             Assert.AreEqual(CompanyOverviewPage.URL, driver.Url);
         }
-
+        
         //database moet leeg gemaakt worden als er geen tijdsloten over zijn
         [Test]
         [Description("TC10")]
@@ -112,7 +113,7 @@ namespace Selenium_Tests
             Thread.Sleep(100);
             Assert.AreEqual(CompanyDetailPage.URL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC11")]
         public void ReturnButtonOnApplicationPageShouldOpenCompanyDetailPage()
@@ -121,97 +122,99 @@ namespace Selenium_Tests
 
             Assert.AreEqual(CompanyDetailPage.URL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC12")]
-        public void StudentShouldBeAbleToOpenInternshipApplicationDetailsPage()
+        public void StudentShouldBeAbleToOpenApplicationDetailsPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickApplicationsButton().ClickDetailsOnApplication();
 
             Assert.AreEqual(ApplicationDetailPage.URL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC13")]
         public void ReturnButtonOnApplicationDetailsPageShouldOpenApplicationsOverviewPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickApplicationsButton().ClickDetailsOnApplication().ClickReturnButton();
 
-            Assert.AreEqual(ApplicationsOverviewPage.URL, driver.Url);
+            Assert.AreEqual(ApplicationsOverviewPage.CurrentURL, driver.Url);
         }
-
+        */
+        /*
         [Test]
         [Description("TC14")]
-        public void CompanyOverviewReturnButtonShouldOpenDashboard()
+        public void ReturnButtonOnCompanyOverviewPageShouldOpenDashboard()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickCompanyOverviewButton().ClickReturnButton();
 
-            Assert.AreEqual(DashboardPageStudents.URL, driver.Url);
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC15")]
-        public void ApplicationsOverviewReturnButtonShouldOpenDashboard()
+        public void ReturnButtonOnApplicationsOverviewPageShouldOpenDashboard()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickApplicationsButton().ClickReturnButton();
 
-            Assert.AreEqual(DashboardPageStudents.URL, driver.Url);
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
         }
-
+        */
+        /*
         [Test]
         [Description("TC016")]
-        public void LogoutButtonShouldReturnUserToSignInPage()
+        public void ClickingSignOutOnDashbpardShouldRedirectUserToSignInPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().Logout();
 
-            Assert.AreEqual(SignInPage.URL, driver.Url);
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC17")]
         public void ClickingSignOutOnCompanyOverviewPageShouldRedirectToSignInPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickCompanyOverviewButton().Logout();
 
-            Assert.AreEqual(SignInPage.URL, driver.Url);
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC18")]
         public void ClickingSignOutOnCompanyDetailPageShouldRedirectToSignInPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickCompanyOverviewButton().ClickFirstCompany().Logout();
 
-            Assert.AreEqual(SignInPage.URL, driver.Url);
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC19")]
         public void ClickingSignOutOnApplicationPageShouldRedirectToSignInPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickCompanyOverviewButton().ClickFirstCompany().ClickApplyButton().Logout();
             Thread.Sleep(100);
-            Assert.AreEqual(SignInPage.URL, driver.Url);
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC20")]
         public void ClickingSignOutOnApplicationsOverviewPageShouldRedirectToSignInPage()
         {
             landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickApplicationsButton().Logout();
 
-            Assert.AreEqual(SignInPage.URL, driver.Url);
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
-
+        
         [Test]
         [Description("TC21")]
         public void ClickingSignOutOnApplicationDetailPageShouldRedirectToSignInPage()
         {
-            landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickApplicationsButton().ClickDetailsOnApplication().Logout();
+            landingPage.ClickLoginButton().LoginStudentWithValidCredentials().ClickApplicationsOverviewButton().ClickDetailsOnApplication().Logout();
 
-            Assert.AreEqual(SignInPage.URL, driver.Url);
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
-
+        */
         [TearDown]
         public void CloseBrowser()
         {

@@ -19,12 +19,9 @@ namespace Selenium_Tests
         public void StartBrowser()
         {
             driver = new ChromeDriver(@"X:\PXL Jaar 2\S2\DevOps Management\Selenium Tests\Selenium Tests\Drivers\");
-
-            Homepage landing = new Homepage(driver);
-            landing.Open();
             
-            SignInPage signInPage = landing.ClickLoginButton();
-            dashboardPageStudents = signInPage.LoginStudentWithValidCredentials();
+            dashboardPageStudents = new DashboardPageStudents(driver);
+            dashboardPageStudents.Open().ClickLoginButton().LoginStudentWithValidCredentials();
         }
 
         [Test]
@@ -36,13 +33,13 @@ namespace Selenium_Tests
         [Test]
         public void DashboardTitleShouldBeDashboard()
         {
-            Assert.True(driver.FindElement(By.TagName("Body")).Enabled);
+            Assert.Equals(DashboardPageStudents.Title, driver.Title);
         }
 
         [Test]
         public void StudentDashboardContainsLogoutButton()
         {
-            Assert.True(driver.FindElement(By.Id("pxlLogo")).Enabled);
+            Assert.True(driver.FindElement(By.Id("logoutIcon")).Enabled);
         }
 
         [Test]
@@ -58,17 +55,30 @@ namespace Selenium_Tests
         }
 
         [Test]
-        public void BedrijvenButtonOpensCompanyOverviewPage()
+        [Description("State Transition TC05")]
+        public void CompanyButtonShouldOpenCompanyOverviewPage()
         {
             dashboardPageStudents.ClickCompanyOverviewButton();
-            Assert.AreEqual("http://localhost:8080/general/companyOverview.html", driver.Url);
+
+            Assert.AreEqual(CompanyOverviewPage.CurrentURL, driver.Url);
         }
 
         [Test]
-        public void SollicitatiesButtonOpensApplicationsPage()
+        [Description("State Transition TC06")]
+        public void InternshipApplicationsButtonShouldOpenApplicationsOverview()
         {
-            dashboardPageStudents.ClickApplicationsButton();
-            Assert.AreEqual("http://localhost:8080/student/studentApplicationOverview.html", driver.Url);
+            dashboardPageStudents.ClickApplicationsOverviewButton();
+
+            Assert.AreEqual(ApplicationsOverviewPage.CurrentURL, driver.Url);
+        }
+
+        [Test]
+        [Description("State Transition TC016")]
+        public void ClickingSignOutOnDashbpardShouldRedirectUserToSignInPage()
+        {
+            dashboardPageStudents.Logout();
+
+            Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
 
         [TearDown]

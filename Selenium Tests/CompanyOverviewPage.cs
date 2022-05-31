@@ -10,7 +10,8 @@ namespace Selenium_Tests
 {
     internal class CompanyOverviewPage : DashboardPageStudents
     {
-        public static string URL = "http://localhost:8080/general/companyOverview.html";
+        public static string CurrentURL = "http://localhost:8080/general/companyOverview.html";
+        public static string ExpectedURL = "http://localhost:8080/CompanyOverview.html";
         public By firstCompany = By.Id("1");
 
         public CompanyOverviewPage(IWebDriver driver) : base(driver)
@@ -20,7 +21,7 @@ namespace Selenium_Tests
 
         public CompanyDetailPage ClickFirstCompany()
         {
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             driver.FindElement(firstCompany).Click();
             return new CompanyDetailPage(driver);
         }

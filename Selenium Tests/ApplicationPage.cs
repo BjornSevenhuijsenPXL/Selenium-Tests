@@ -10,7 +10,8 @@ namespace Selenium_Tests
 {
     internal class ApplicationPage : CompanyDetailPage
     {
-        public static string URL = "http://localhost:8080/student/applicationForm.html";
+        public static string CurrentURL = "http://localhost:8080/student/applicationForm.html";
+        public static string ExpectedURL = "http://localhost:8080/ApplicationForm.html";
         private By assignmentDropBox = By.Id("assignmentSelect");
         private By motivationTextBox = By.Id("studentMotivation");
         private By timeSlotDropBox = By.Id("timeSlotSelect");

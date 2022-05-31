@@ -35,12 +35,12 @@ namespace Selenium_Tests
         }
 
         [Test]
+        [Description("State Transition TC03")]
         public void StudentCanLoginWithValidCredentials()
         {
-            signInPage.Login("stefaan@email.be", "temp");
-
+            signInPage.LoginStudentWithValidCredentials();
             Thread.Sleep(100);
-            Assert.AreEqual("http://localhost:8080/student/studentDashboard.html", driver.Url);
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
         }
 
         [Test]
@@ -60,36 +60,54 @@ namespace Selenium_Tests
             Thread.Sleep(100);
             Assert.AreEqual("http://localhost:8080/company/companyDashboard.html", driver.Url);
         }
-
+        //Yep
         [Test]
-        public void InvalidEmailThrowsError()
+        public void InvalidEmailShowsError()
         {
             signInPage.Login("q@q.q", "temp");
 
             Thread.Sleep(100);
             Assert.True(driver.FindElement(By.Id("ErrorBox")).Enabled);
         }
-
+        //yep
         [Test]
-        public void InvalidPasswordThrowsError()
+        public void InvalidEmailErrorShouldIncludeEmailOrPasswordIsInvalid()
+        {
+            signInPage.Login("q@q.q", "temp");
+
+            Thread.Sleep(100);
+            StringAssert.Contains("email or password is invalid", driver.FindElement(By.Id("ErrorBox")).Text.ToLower());
+        }
+        //Yep
+        [Test]
+        public void InvalidPasswordShowsError()
         {
             signInPage.Login("stefaan@email.be", "q");
 
             Thread.Sleep(100);
             Assert.True(driver.FindElement(By.Id("ErrorBox")).Enabled);
         }
-
+        //yep
         [Test]
-        public void EmptyCredentialsThrowsError()
+        public void InvalidPasswordErrorShouldIncludeEmailOrPasswordIsInvalid()
+        {
+            signInPage.Login("stefaan@email.be", "q");
+
+            Thread.Sleep(100);
+            StringAssert.Contains("email or password is invalid", driver.FindElement(By.Id("ErrorBox")).Text.ToLower());
+        }
+        //yep
+        [Test]
+        public void EmptyCredentialsShowsError()
         {
             signInPage.Login("", "");
 
             Thread.Sleep(100);
             Assert.True(driver.FindElement(By.Id("ErrorBox")).Enabled);
         }
-
+        //YEP
         [Test]
-        public void CanNotImmediatlyLoginAfter3Attempts()
+        public void CanNotLoginAfter3InlavidLoginAttempts()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -98,7 +116,39 @@ namespace Selenium_Tests
             }
             signInPage.LoginStudentWithValidCredentials();
             Thread.Sleep(100);
-            Assert.AreNotEqual("http://localhost:8080/student/studentDashboard.html", driver.Url);
+            Assert.AreNotEqual(DashboardPageStudents.CurrentURL, driver.Url);
+        }
+        //YEP
+        [Test]
+        public void ErrorBoxShouldShowThatAccountIsLockedAfter3InvalidLoginAttempts()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                signInPage.Login("Q", "Q");
+                Thread.Sleep(100);
+            }
+            StringAssert.Contains("3 invalid attempts",driver.FindElement(By.Id("ErrorBox")).Text.ToLower());
+        }
+
+        [Test]
+        public void LoginPageTitleShouldBeLogin()
+        {
+            Assert.AreEqual(SignInPage.Title, driver.Title);
+        }
+
+        [Test]
+        public void LoginPageUrlShouldBeLocalhost8080Login()
+        {
+            Assert.AreEqual(SignInPage.ExpectedURL, driver.Url);
+        }
+
+        [Test]
+        [Description("State Transition TC04")]
+        public void ReturnButtonOnLoginPageShouldOpenHomepage()
+        {
+            signInPage.ClickReturnButton();
+            Thread.Sleep(100);
+            Assert.AreEqual(Homepage.CurrentURL, driver.Url);
         }
 
         [TearDown]

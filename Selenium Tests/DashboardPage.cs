@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Selenium_Tests
@@ -17,7 +18,7 @@ namespace Selenium_Tests
         {
         }
 
-        public void GoToDashboard()
+        public void ClickHomeButton()
         {
             driver.FindElement(homeButton).Click();
         }
@@ -29,6 +30,7 @@ namespace Selenium_Tests
 
         public void Logout()
         {
+            Thread.Sleep(100);
             driver.FindElement(logoutButton).Click();
         }
     }

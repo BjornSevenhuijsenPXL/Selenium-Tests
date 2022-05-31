@@ -10,7 +10,9 @@ namespace Selenium_Tests
 {
     class SignInPage : Homepage
     {
-        public static string URL = "http://localhost:8080/login/login.html";
+        public static string CurrentURL = "http://localhost:8080/login/login.html";
+        public static string ExpectedURL = "http://localhost:8080/login.html";
+        public static string Title = "Login";
         private By email = By.Id("inputEmail");
         private By password = By.Id("inputPassword");
         private By retunButton = By.XPath("//*[@id=\"leftContainer\"]/div/img");
@@ -42,6 +44,7 @@ namespace Selenium_Tests
 
         public void ClickReturnButton()
         {
+            Thread.Sleep(100);
             driver.FindElement(retunButton).Click();
         }
     }

@@ -61,8 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDetailPage.cs" />
+    <Compile Include="ApplicationDetailPageTests.cs" />
+    <Compile Include="ApplicationPageTests.cs" />
+    <Compile Include="ApplicationsOverviewTests.cs" />
     <Compile Include="CompanyDetailPage.cs" />
+    <Compile Include="CompanyDetailsTests.cs" />
     <Compile Include="CompanyOverviewPage.cs" />
+    <Compile Include="CompanyOverviewTests.cs" />
     <Compile Include="DashboardPage.cs" />
     <Compile Include="DashboardPageStudents.cs" />
     <Compile Include="DashboardStudentsTests.cs" />
@@ -79,11 +84,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Files\download.pdf" />
+    <None Include="Files\download.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Drivers\chromedriver.exe" />
+    <Content Include="Drivers\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

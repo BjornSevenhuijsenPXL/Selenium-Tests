@@ -9,7 +9,9 @@ namespace Selenium_Tests
 {
     internal class ApplicationDetailPage : ApplicationsOverviewPage
     {
-        public static string URL = "http://localhost:8080/student/studentApplicationDetails.html";
+        public static string CurrentURL = "http://localhost:8080/student/studentApplicationDetails.html";
+        public static string ExpectedURL = "http://localhost:8080/ApplicationDetails.html";
+
         public ApplicationDetailPage(IWebDriver driver) : base(driver)
         {
         }

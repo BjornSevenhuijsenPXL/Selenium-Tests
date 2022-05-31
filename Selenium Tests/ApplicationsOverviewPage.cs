@@ -11,9 +11,9 @@ namespace Selenium_Tests
 {
     internal class ApplicationsOverviewPage : DashboardPageStudents
     {
-        public static string URL = "http://localhost:8080/student/studentApplicationOverview.html";
+        public static string CurrentURL = "http://localhost:8080/student/studentApplicationOverview.html";
+        public static string ExpectedURL = "http://localhost:8080/ApplicationsOverview.html";
         public By detailButton = By.XPath("/html/body/main/div[2]/button");
-
 
         public ApplicationsOverviewPage(IWebDriver driver) : base(driver)
         {
