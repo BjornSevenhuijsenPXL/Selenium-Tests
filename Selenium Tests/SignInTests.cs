@@ -35,15 +35,6 @@ namespace Selenium_Tests
         }
 
         [Test]
-        [Description("State Transition TC03")]
-        public void StudentCanLoginWithValidCredentials()
-        {
-            signInPage.LoginStudentWithValidCredentials();
-            Thread.Sleep(100);
-            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
-        }
-
-        [Test]
         public void CoördinatorCanLoginWithValidCredentials()
         {
             signInPage.Login("admin@admin.com", "pxl");
@@ -129,7 +120,7 @@ namespace Selenium_Tests
             }
             StringAssert.Contains("3 invalid attempts",driver.FindElement(By.Id("ErrorBox")).Text.ToLower());
         }
-
+        //yep
         [Test]
         public void LoginPageTitleShouldBeLogin()
         {
@@ -140,6 +131,15 @@ namespace Selenium_Tests
         public void LoginPageUrlShouldBeLocalhost8080Login()
         {
             Assert.AreEqual(SignInPage.ExpectedURL, driver.Url);
+        }
+
+        [Test]
+        [Description("State Transition TC03")]
+        public void StudentCanLoginWithValidCredentials()
+        {
+            signInPage.LoginStudentWithValidCredentials();
+            Thread.Sleep(100);
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
         }
 
         [Test]

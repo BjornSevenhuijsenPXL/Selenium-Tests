@@ -46,12 +46,6 @@ namespace Selenium_Tests
         }
 
         [Test]
-        public void CompanyRegisterButtonContentContainsRegisterCompany()
-        {
-            StringAssert.Contains("Registreer (bedrijf)", driver.FindElement(homepage.buttonRegisterAsCompany).Text);
-        }
-
-        [Test]
         public void HomepageTitleShouldBeHomepage()
         {
             Assert.AreEqual(Homepage.Title, driver.Title);
