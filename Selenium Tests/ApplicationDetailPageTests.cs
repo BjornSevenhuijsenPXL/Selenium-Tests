@@ -41,6 +41,24 @@ namespace Selenium_Tests
             Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
 
+        [Test]
+        [Description("State Transition TC22")]
+        public void WhenApplicationIsApprovedStudentShouldBeAbleToClickMakeAppointment()
+        {
+            applicationDetailPage.ClickMakeAppointment();
+
+            Assert.AreEqual(MakeAppointmentPage.ExpectedURL, driver.Url);
+        }
+
+        [Test]
+        [Description("State Transition TC28")]
+        public void ClickingHomeButtonOpensTheDashboard()
+        {
+            applicationDetailPage.ClickHomeButton();
+
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
+        }
+
         [TearDown]
         public void CloseBrowser()
         {

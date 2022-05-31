@@ -96,13 +96,36 @@ namespace Selenium_Tests
             Thread.Sleep(100);
             Assert.True(driver.FindElement(By.Id("ErrorBox")).Enabled);
         }
+
+        [Test]
+        public void CanLoginAfter1InvalidLoginAttempt()
+        {
+            signInPage.Login("stefaan@email.be", "Q");
+            signInPage.LoginStudentWithValidCredentials();
+            Thread.Sleep(100);
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
+        }
+
+        [Test]
+        public void CanLoginAfter2InlavidLoginAttempts()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                signInPage.Login("stefaan@email.be", "Q");
+                Thread.Sleep(100);
+            }
+            signInPage.LoginStudentWithValidCredentials();
+            Thread.Sleep(100);
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
+        }
+
         //YEP
         [Test]
         public void CanNotLoginAfter3InlavidLoginAttempts()
         {
             for (int i = 0; i < 3; i++)
             {
-                signInPage.Login("Q", "Q");
+                signInPage.Login("stefaan@email.be", "Q");
                 Thread.Sleep(100);
             }
             signInPage.LoginStudentWithValidCredentials();

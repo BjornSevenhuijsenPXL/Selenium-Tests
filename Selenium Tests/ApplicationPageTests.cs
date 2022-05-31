@@ -52,6 +52,15 @@ namespace Selenium_Tests
             Assert.AreEqual(SignInPage.CurrentURL, driver.Url);
         }
 
+        [Test]
+        [Description("State Transition TC27")]
+        public void ClickingHomeButtonOpensTheDashboard()
+        {
+            applicationPage.ClickHomeButton();
+
+            Assert.AreEqual(DashboardPageStudents.CurrentURL, driver.Url);
+        }
+
         [TearDown]
         public void CloseBrowser()
         {

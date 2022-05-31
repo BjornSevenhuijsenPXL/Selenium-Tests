@@ -75,6 +75,8 @@
     <Compile Include="ApplicationsOverviewPage.cs" />
     <Compile Include="Homepage.cs" />
     <Compile Include="HomepageTests.cs" />
+    <Compile Include="MakeAppointmentPage.cs" />
+    <Compile Include="MakeAppointmentTests.cs" />
     <Compile Include="SignInTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
