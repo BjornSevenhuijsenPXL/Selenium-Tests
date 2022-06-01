@@ -23,9 +23,11 @@ namespace Selenium_Tests
             driver.FindElement(homeButton).Click();
         }
 
-        public void OpenSettings()
+        public Settings OpenSettings()
         {
             driver.FindElement(settingsButton).Click();
+            Thread.Sleep(100);
+            return new Settings(driver);
         }
 
         public void Logout()

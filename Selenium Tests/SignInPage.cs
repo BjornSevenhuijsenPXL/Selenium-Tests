@@ -28,6 +28,7 @@ namespace Selenium_Tests
             driver.FindElement(this.email).SendKeys(email);
             driver.FindElement(this.password).SendKeys(password);
             driver.FindElement(By.Id("buttonLogin")).Click();
+            Thread.Sleep(200);
             return new DashboardPage(driver);
         }
 

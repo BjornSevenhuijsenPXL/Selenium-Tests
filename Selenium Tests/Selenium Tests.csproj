@@ -64,6 +64,9 @@
     <Compile Include="ApplicationDetailPageTests.cs" />
     <Compile Include="ApplicationPageTests.cs" />
     <Compile Include="ApplicationsOverviewTests.cs" />
+    <Compile Include="ChangePasswordPage.cs" />
+    <Compile Include="ChangePasswordTests.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="CompanyDetailPage.cs" />
     <Compile Include="CompanyDetailsTests.cs" />
     <Compile Include="CompanyOverviewPage.cs" />

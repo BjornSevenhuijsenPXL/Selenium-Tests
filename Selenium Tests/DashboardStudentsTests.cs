@@ -33,7 +33,7 @@ namespace Selenium_Tests
         [Test]
         public void DashboardTitleShouldBeDashboard()
         {
-            Assert.Equals(DashboardPageStudents.Title, driver.Title);
+            Assert.AreEqual(DashboardPageStudents.Title, driver.Title);
         }
 
         [Test]
