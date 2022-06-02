@@ -230,7 +230,7 @@ namespace Selenium_Tests
 
         [Test]
         [Description("EP & BVA TC13")]
-        public void LengthLessThan1AndOtherRequirementsValidShouldFail()
+        public void LengthLessThan8AndOtherRequirementsValidShouldFail()
         {
             try
             {
