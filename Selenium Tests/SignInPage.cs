@@ -28,7 +28,7 @@ namespace Selenium_Tests
             driver.FindElement(this.email).SendKeys(email);
             driver.FindElement(this.password).SendKeys(password);
             driver.FindElement(By.Id("buttonLogin")).Click();
-            Thread.Sleep(200);
+            Thread.Sleep(400);
             return new DashboardPage(driver);
         }
 
@@ -39,7 +39,7 @@ namespace Selenium_Tests
             driver.FindElement(email).SendKeys("stefaan@email.be");
             driver.FindElement(password).SendKeys("temp");
             driver.FindElement(By.Id("buttonLogin")).Click();
-            Thread.Sleep(200);
+            Thread.Sleep(400);
             return new DashboardPageStudents(driver);
         }
 
