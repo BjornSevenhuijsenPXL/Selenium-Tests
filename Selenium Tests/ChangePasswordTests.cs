@@ -36,7 +36,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "P@ssw0rd").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("P@ssw0rd");
             }
         }
@@ -54,7 +53,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "Passw0rd!123").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("Passw0rd!123");
             }
         }
@@ -73,7 +71,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "H8q,<Z!(X=,cR[>bzw3C/9s-,mkgx2`~k=q;D<:8KSEW7YE$wsFC$B<M%y~n,5't_n[j}?V^Fs34+zEQk(9{?JAV%mc*%+h4[yXFv8cVWU+?<srL>c$4Zu{*%k2.KA7=").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("H8q,<Z!(X=,cR[>bzw3C/9s-,mkgx2`~k=q;D<:8KSEW7YE$wsFC$B<M%y~n,5't_n[j}?V^Fs34+zEQk(9{?JAV%mc*%+h4[yXFv8cVWU+?<srL>c$4Zu{*%k2.KA7=");
             } 
         }
@@ -91,7 +88,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "H8q,<Z!(X=,cR[>bzw3C/9s-,mkgx2`~k=q;D<:8KSEW7YE$wsFC$B<M%y~n,5't_n[j}?V^Fs34+zEQk(9{?JAV%mc*%+h4[yXFv8cVWU+?<srL>c$4Zu{*%k2.KA7").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("H8q,<Z!(X=,cR[>bzw3C/9s-,mkgx2`~k=q;D<:8KSEW7YE$wsFC$B<M%y~n,5't_n[j}?V^Fs34+zEQk(9{?JAV%mc*%+h4[yXFv8cVWU+?<srL>c$4Zu{*%k2.KA7");
             }
         }
@@ -109,7 +105,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "Passw0rd!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("Passw0rd!");
             }
         }
@@ -127,7 +122,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "P@ssw0rd!!!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("P@ssw0rd!!!");
             }
         }
@@ -145,7 +139,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "Passw0rd!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("Passw0rd!");
             }
         }
@@ -163,7 +156,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "PASSw0rd!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("PASSw0rd!");
             }
         }
@@ -181,7 +173,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "PaSSW0RD!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("PaSSW0RD!");
             }
         }
@@ -199,7 +190,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "PassW0RD!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("PassW0RD!");
             }
         }
@@ -217,7 +207,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "Passw0rd!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("Passw0rd!");
             }
         }
@@ -235,7 +224,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "P@ssw0rd").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("P@ssw0rd");
             }
         }
@@ -253,7 +241,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "P@sw0rd").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("P@sw0rd");
             }
         }
@@ -271,7 +258,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "H8q,<Z!(X=,cR[>bzw3C/9s-,mkgx2`~k=q;D<:8KSEW7YE$wsFC$B<M%y~n,5't_n[j}?V^Fs34+zEQk(9{?JAV%mc*%+h4[yXFv8cVWU+?<srL>c$4Zu{*%k2.KA7=a").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("H8q,<Z!(X=,cR[>bzw3C/9s-,mkgx2`~k=q;D<:8KSEW7YE$wsFC$B<M%y~n,5't_n[j}?V^Fs34+zEQk(9{?JAV%mc*%+h4[yXFv8cVWU+?<srL>c$4Zu{*%k2.KA7=a");
             }
         }
@@ -289,7 +275,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "Passw0rd").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("Passw0rd");
             }
         }
@@ -307,7 +292,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "passw0rd!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("passw0rd!");
             }
         }
@@ -325,7 +309,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "PASSW0RD!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("PASSW0RD!");
             }
         }
@@ -343,7 +326,6 @@ namespace Selenium_Tests
             finally
             {
                 //Wachtwoord terug naar default zetten
-                //changePasswordPage.Open().ClickLoginButton().Login("stefaan@email.be", "Password!").OpenSettings().ClickChangePassword().CreateNewPassword("temp");
                 changePasswordPage.ResetToDefaultPassword("Password!");
             }
         }

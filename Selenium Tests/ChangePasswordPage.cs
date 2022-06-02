@@ -29,9 +29,6 @@ namespace Selenium_Tests
         public void GoToChangePasswordAndChangeTo(String newPassword)
         {
             this.Open().ClickLoginButton().LoginStudentWithValidCredentials().OpenSettings().ClickChangePassword().CreateNewPassword(newPassword);
-            //driver.FindElement(this.newPassword).SendKeys(newPassword);
-            //driver.FindElement(confirmNewPassword).SendKeys(newPassword);
-            //driver.FindElement(submitNewPasswordButton).Click();
             Thread.Sleep(100);
         }
 
