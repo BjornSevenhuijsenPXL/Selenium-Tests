@@ -26,6 +26,13 @@ namespace Selenium_Tests
             driver.FindElement(submitNewPasswordButton).Click();
         }
 
+        public void InputNewAndConfirmationPasswordIndependently(String newPassword, String confirmationPassword)
+        {
+            driver.FindElement(this.newPassword).SendKeys(newPassword);
+            driver.FindElement(confirmNewPassword).SendKeys(confirmationPassword);
+            driver.FindElement(submitNewPasswordButton).Click();
+        }
+
         public void GoToChangePasswordAndChangeTo(String newPassword)
         {
             this.Open().ClickLoginButton().LoginStudentWithValidCredentials().OpenSettings().ClickChangePassword().CreateNewPassword(newPassword);
@@ -35,6 +42,12 @@ namespace Selenium_Tests
         public void ResetToDefaultPassword(String usedPassword)
         {
             this.Open().ClickLoginButton().Login("stefaan@email.be", usedPassword).OpenSettings().ClickChangePassword().CreateNewPassword("temp");
+            Thread.Sleep(100);
+        }
+
+        public void GoToChangePasswordAndChangeNewAndConfirmationPasswordIndependently(String newPassword, String confirmationPassword)
+        {
+            this.Open().ClickLoginButton().LoginStudentWithValidCredentials().OpenSettings().ClickChangePassword().InputNewAndConfirmationPasswordIndependently(newPassword, confirmationPassword);
             Thread.Sleep(100);
         }
 

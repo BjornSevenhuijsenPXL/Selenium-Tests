@@ -330,6 +330,22 @@ namespace Selenium_Tests
             }
         }
 
+        [Test]
+        public void ConfirmationPasswordNotMatchingWithNewPasswordShouldShowError()
+        {
+            try
+            {
+                changePasswordPage.GoToChangePasswordAndChangeNewAndConfirmationPasswordIndependently("P@ssw0rd", "P@ssw0rd!");
+                Thread.Sleep(100);
+                Assert.DoesNotThrow(() => driver.FindElement(By.Id("ErrorBox")));
+            }
+            finally
+            {
+                //Wachtwoord terug naar default zetten
+                changePasswordPage.ResetToDefaultPassword("P@ssw0rd");
+            }
+        }
+
         [TearDown]
         public void CloseBrowser()
         {
